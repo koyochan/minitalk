@@ -2,15 +2,17 @@
 
 void    send_char(int pid, char c)
 {
-    int digit = 8;
-    while (digit > 0)
+    int digit = 7;
+    while (digit >= 0)
     {
         if (c & (1 << digit))
             kill (pid, SIGUSR1);
         else
             kill(pid, SIGUSR2);
-        digit++;
+        digit--;
+        usleep(1000);
     }
+    return ;
 }
 
 void    send_to_client(int pid, char *str)
@@ -20,6 +22,7 @@ void    send_to_client(int pid, char *str)
         send_char(pid, *str);
         str++;
     }
+    return ;
 }
 
 int main(int ac, char **av)
@@ -29,4 +32,5 @@ int main(int ac, char **av)
         return (0);
     pid = ft_atoi(av[1]);
     send_to_client(pid, av[2]);
+    return (0);
 }

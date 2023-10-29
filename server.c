@@ -1,11 +1,11 @@
 #include "minitalk.h"
-#include <stdio.h>
 
 void    handle_sigusr(int signum)
 {
     static int count_binary = 7;
 
     static char c = 0;
+    
     if (signum == SIGUSR1)
     {
         c |= 1 << count_binary;
@@ -19,7 +19,7 @@ void    handle_sigusr(int signum)
         c = 0;
         count_binary = 7;
     }
-
+    return ;
 }
 
 int main() {
