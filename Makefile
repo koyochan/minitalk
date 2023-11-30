@@ -74,9 +74,7 @@ fclean:
 re: fclean all
 
 mandatory:	$(CLIENT) $(SERVER)
-bonus:		mandatory
 
 m : mandatory
-b : bonus
 
-.PHONY: all clean fclean re mandatory m bonus b
+.PHONY: all clean fclean re mandatory m
