@@ -1,36 +1,54 @@
 #include "minitalk.h"
 
-void    send_char(int pid, char c)
+int	send_char(int pid, char c)
 {
-    int digit = 7;
-    while (digit >= 0)
-    {
-        if (c & (1 << digit))
-            kill (pid, SIGUSR1);
-        else
-            kill(pid, SIGUSR2);
-        digit--;
-        usleep(1000);
-    }
-    return ;
+	int	digit;
+	int	error;
+	int	count;
+
+	error = 0;
+	count = 0;
+	digit = 7;
+	while (digit >= 0)
+	{
+		if (c & (1 << digit))
+		{
+			count++;
+			error = kill(pid, SIGUSR1);
+		}
+		else
+			error = kill(pid, SIGUSR2);
+		if (error == -1)
+			return (-1);
+		digit--;
+		usleep(1000);
+	}
+	return (count);
 }
 
-void    send_to_client(int pid, char *str)
+int	send_to_server(int pid, char *str)
 {
-    while(*str)
-    {
-        send_char(pid, *str);
-        str++;
-    }
-    return ;
+	int	count;
+	int	error;
+
+	count = 0;
+	while (*str)
+	{
+		error = send_char(pid, *str);
+		if (error == -1)
+			return (-1);
+		count += error;
+		str++;
+	}
+	return (count);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    int pid;
-    if (ac != 3)
-        return (0);
-    pid = ft_atoi(av[1]);
-    send_to_client(pid, av[2]);
-    return (0);
+	int	pid;
+
+	if (ac != 3)
+		return (0);
+	pid = ft_atoi(av[1]);
+	return (send_to_server(pid, av[2]));
 }

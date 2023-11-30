@@ -1,10 +1,23 @@
-#ifndef MINITALK_H
-#define MINITALK_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kotkobay <kotkobay@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/27 12:45:02 by kotkobay          #+#    #+#             */
+/*   Updated: 2023/11/27 13:00:00 by kotkobay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <signal.h>
-#include <unistd.h>
-#include <stdlib.h>
+
+#ifndef MINITALK_H
+# define MINITALK_H
+
+# include "./libft/libft.h"
+# include "./printf/ft_printf.h"
+# include <signal.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 #endif
