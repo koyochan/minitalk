@@ -6,7 +6,7 @@
 /*   By: kotkobay <kotkobay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 01:47:52 by kotkobay          #+#    #+#             */
-/*   Updated: 2023/12/01 01:47:53 by kotkobay         ###   ########.fr       */
+/*   Updated: 2023/12/05 01:44:52 by kotkobay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	send_char(int pid, char c)
 		if (error == -1)
 			return (-1);
 		digit--;
-		usleep(1000);
+		usleep(100);
 	}
 	return (count);
 }
