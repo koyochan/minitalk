@@ -6,10 +6,9 @@
 /*   By: kotkobay <kotkobay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:45:02 by kotkobay          #+#    #+#             */
-/*   Updated: 2023/11/27 13:00:00 by kotkobay         ###   ########.fr       */
+/*   Updated: 2023/12/05 01:57:01 by kotkobay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef MINITALK_H
 # define MINITALK_H
